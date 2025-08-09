@@ -8,8 +8,8 @@ namespace SwordOffer
         {
             Console.WriteLine("Hello, World!");
 
-            var c = new CutTheRope();
-            c.Cut(4);
+            PrintNumbersFrom1 printNumbersFrom1 = new PrintNumbersFrom1();
+            printNumbersFrom1.Print(2);
 
         }
     }
