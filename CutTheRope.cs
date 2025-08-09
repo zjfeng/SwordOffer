@@ -48,4 +48,44 @@ namespace SwordOffer
             Console.WriteLine($"长度为{len}的绳子，剪短后每段的长度的最大乘积为：{deps[len]}");
         }
     }
+
+    internal class CutTheRope2
+    {
+        public void Cut(int len)
+        {
+            if (len < 2)
+            {
+                Console.WriteLine("The length of the rope must be at least 2 to cut it into pieces.");
+                return;
+            }
+
+            if (len == 2)
+            {
+                Console.WriteLine("乘积最大为1");
+                return;
+            }
+            else if (len == 3)
+            {
+                Console.WriteLine("乘积最大为2");
+                return;
+            }
+
+            int timesOf3 = len / 3;
+            int remainder = len % 3;
+
+            if (remainder == 1)
+            { 
+                timesOf3 -= 1; // 如果余数为1，减少一个3，增加一个4（3+1=4）
+                remainder = 4;
+            }
+            else if (remainder == 0)
+            {
+                remainder = 1; // 如果余数为0，直接使用3的乘积
+            }
+
+            int maxProduct = (int)Math.Pow(3, timesOf3) * remainder;
+            Console.WriteLine($"长度为{len}的绳子，剪短后每段的长度的最大乘积为：{maxProduct}");
+            return;
+        }
+    }
 }

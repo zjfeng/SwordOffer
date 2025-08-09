@@ -8,9 +8,8 @@ namespace SwordOffer
         {
             Console.WriteLine("Hello, World!");
 
-            var c = new CutTheRope();
-            c.Cut(4);
-
+            NumberOf1InBinary numberOf1InBinary = new NumberOf1InBinary();
+            Console.WriteLine($"找到1的个数为：{numberOf1InBinary.Find(-9)}");
         }
     }
 }
