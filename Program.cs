@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Threading.Channels;
+using SwordOffer.Structure;
 
 namespace SwordOffer
 {
@@ -9,8 +10,16 @@ namespace SwordOffer
         {
             Console.WriteLine("Hello, World!");
 
-            ChangeOrder changer = new ChangeOrder();
-            Console.WriteLine($"chenged:{string.Join(", ", changer.Change(new int[] { 1,1,2,3,4,5,2,1,3}))}");
+            ListNode head = new ListNode(1);
+            head.next = new ListNode(2);
+            head.next.next = new ListNode(3);
+            head.next.next.next = new ListNode(4);
+            head.next.next.next.next = new ListNode(5);
+            head.next.next.next.next.next = new ListNode(6);
+            head.next.next.next.next.next.next = head.next.next;
+
+            EntryNodeOfCycle find = new EntryNodeOfCycle();
+            find.FindEntry(head);
         }
     }
 }

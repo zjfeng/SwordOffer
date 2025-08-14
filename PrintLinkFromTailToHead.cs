@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SwordOffer.Structure;
 
 namespace SwordOffer
 {
@@ -28,12 +29,5 @@ namespace SwordOffer
             //Print(node.next);
             //Console.WriteLine(node.val);
         }
-    }
-
-    internal class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x) { val = x; }
     }
 }
