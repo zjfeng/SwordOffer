@@ -10,16 +10,21 @@ namespace SwordOffer
         {
             Console.WriteLine("Hello, World!");
 
-            ListNode head = new ListNode(1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(4);
-            head.next.next.next.next = new ListNode(5);
-            head.next.next.next.next.next = new ListNode(6);
-            head.next.next.next.next.next.next = head.next.next;
+            ListNode head1 = new ListNode(1);
+            head1.next = new ListNode(3);
+            head1.next.next = new ListNode(5);
 
-            EntryNodeOfCycle find = new EntryNodeOfCycle();
-            find.FindEntry(head);
+            ListNode head2 = new ListNode(2);
+            head2.next = new ListNode(4);
+            head2.next.next = new ListNode(6);
+
+            MergeTwoSortedLinkedLists find = new MergeTwoSortedLinkedLists();
+            var ne = find.Merge(head1, head2);
+            while (ne.next != null)
+            { 
+                Console.WriteLine(ne.val);
+                ne = ne.next;
+            }
         }
     }
 }
